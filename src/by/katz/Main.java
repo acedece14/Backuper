@@ -15,7 +15,6 @@ public class Main implements Timer.ITimer {
 
     public static void main(String[] args) {new Main();}
 
-
     @Override public void onTimerEvent() {
         var sdf = new SimpleDateFormat("dd-MM-yyyy___HH_mm_ss");
         var time = sdf.format(new Date());

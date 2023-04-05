@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.concurrent.TimeUnit;
 
-@SuppressWarnings("FieldMayBeFinal")
+@SuppressWarnings({"FieldMayBeFinal", "FieldCanBeLocal"})
 public class Settings {
 
     private static final File FILE_SETTINGS = new File("backuper.json");
@@ -18,6 +18,7 @@ public class Settings {
     private String targetDir = "c:\\Config.Msi ";
     private TimeUnit timeUnit = TimeUnit.SECONDS;
     private Integer timeValue = 10;
+    private String exeName = "calc.exe";
 
     private Settings() {}
 
@@ -58,12 +59,5 @@ public class Settings {
 
     public String getTargetDir() {return targetDir;}
 
-    @Override public String toString() {
-        return "Settings{" +
-              "backupDir='" + backupDir + '\'' +
-              ", targetDir='" + targetDir + '\'' +
-              ", timeUnit=" + timeUnit +
-              ", timeValue=" + timeValue +
-              '}';
-    }
+    public String getExeName() {return exeName;}
 }
